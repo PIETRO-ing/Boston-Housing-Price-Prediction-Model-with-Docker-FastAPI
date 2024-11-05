@@ -1,4 +1,7 @@
 # Boston_LR
+
+<img src=https://i.imgur.com/WKQ0nH2.jpg height=350>
+
 Building a model that can provide a price estimate based on a home's characteristics like:
 * The number of rooms
 * The distance to employment centres
