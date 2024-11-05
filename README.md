@@ -7,7 +7,7 @@ Building a model that can provide a price estimate based on a home's characteris
 
 <img src=https://i.imgur.com/WfUSSP7.png height=350>
 
-To accomplish your task you will:
+To accomplish the task I will:
 
 1. Analyse and explore the Boston house price data
 2. Split your data for training and testing
@@ -15,3 +15,5 @@ To accomplish your task you will:
 4. Evaluate how your model's coefficients and residuals
 5. Use data transformation to improve your model performance
 6. Use your model to estimate a property price
+7. Dockerize the model
+8. Deploy the model in an app
