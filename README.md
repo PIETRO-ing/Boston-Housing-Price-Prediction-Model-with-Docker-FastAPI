@@ -20,3 +20,11 @@ To accomplish the task I will:
 6. Use your model to estimate a property price
 7. Dockerize the model
 8. Deploy the model in an app
+
+
+sudo docker build -t jupyter . && sudo docker run -it --rm -p 8888:8888 --mount src="$(pwd)",target=/app,type=bind jupyter
+
+* build the image with all the requirements
+* run a container 
+* access to jupyter lab
+* work on the file inside the continer and see the change in my local directory outside the container
