@@ -1,0 +1,32 @@
+version: '3.8'
+
+services:
+  jupyter:
+    build:
+      context: .
+      dockerfile: Dockerfile.jupyter  # Refers to the renamed Dockerfile for Jupyter
+    ports:
+      - 8888:8888        # Expose JupyterLab on port 8888
+    networks:
+      - app-network
+    volumes:
+      - ./app:/app         # Mount the local app directory to the container
+    environment:
+      - JUPYTER_ENABLE_LAB=True  # Enable JupyterLab by default
+
+  fastapi:
+    build:
+      context: .
+      dockerfile: Dockerfile.fastapi  # Refers to the new Dockerfile for FastAPI
+    ports:
+      - 8000:8000        # Expose FastAPI on port 8000
+    networks:
+      - app-network
+    volumes:
+      - ./app:/app         # Mount the local app directory to the container
+    depends_on:
+      - jupyter            # Optional: Ensures FastAPI starts after Jupyter (not strictly necessary)
+
+networks:
+  app-network:
+    driver: bridge
