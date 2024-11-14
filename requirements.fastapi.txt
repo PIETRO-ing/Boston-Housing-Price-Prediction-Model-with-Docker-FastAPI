@@ -1,0 +1,8 @@
+# FastAPI dependencies
+fastapi
+uvicorn
+joblib
+scikit-learn
+numpy
+pandas
+
