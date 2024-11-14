@@ -11,27 +11,27 @@ app = FastAPI()
 
 # Define the input schema (adjust based on your model's expected features)
 class HouseFeatures(BaseModel):
-    bedrooms: int
-    bathrooms: float
-    sqft_living: int
-    sqft_lot: int
-    floors: float
-    condition: int
-    grade: int
-    sqft_above: int
-    sqft_basement: int
-    yr_built: int
-    yr_renovated: int
-    zipcode: int
+    CRIM: float
+    ZN: float
+    INDUS: float
+    CHAS: float
+    NOX: float
+    RM: float
+    DIS: float
+    RAD: float
+    TAX: float
+    PTRATIO: float
+    B: float
+    LSTAT: float
 
 # Define prediction endpoint
 @app.post("/predict/")
 async def predict(features: HouseFeatures):
     feature_array = np.array([
         [
-            features.bedrooms, features.bathrooms, features.sqft_living, features.sqft_lot,
-            features.floors, features.condition, features.grade, features.sqft_above,
-            features.sqft_basement, features.yr_built, features.yr_renovated, features.zipcode
+            features.CRIM, features.ZN, features.INDUS, features.CHAS,
+            features.NOX, features.RM, features.DIS, features.RAD,
+            features.TAX, features.PTRATIO, features.B, features.LSTAT
         ]
     ])
     prediction = model.predict(feature_array)
