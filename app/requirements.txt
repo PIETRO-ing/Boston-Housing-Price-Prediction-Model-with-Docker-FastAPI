@@ -4,5 +4,5 @@ numpy
 matplotlib
 plotly
 seaborn
-pycaret
+pycaret==3.3.0
 joblib==1.3.2
