@@ -17,6 +17,7 @@ class HouseFeatures(BaseModel):
     CHAS: float
     NOX: float
     RM: float
+    AGE:float
     DIS: float
     RAD: float
     TAX: float
@@ -30,7 +31,7 @@ async def predict(features: HouseFeatures):
     feature_array = np.array([
         [
             features.CRIM, features.ZN, features.INDUS, features.CHAS,
-            features.NOX, features.RM, features.DIS, features.RAD,
+            features.NOX, features.RM, features.AGE, features.DIS, features.RAD,
             features.TAX, features.PTRATIO, features.B, features.LSTAT
         ]
     ])
