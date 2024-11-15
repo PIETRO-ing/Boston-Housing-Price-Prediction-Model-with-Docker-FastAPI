@@ -4,7 +4,7 @@ import joblib
 import numpy as np
 
 # Load your trained Gradient Boosting model (replace with the actual model file)
-model = joblib.load('tuned_gbr_model.pkl')
+model = joblib.load('/app/tuned_gbr_model.pkl')
 
 # Initialize FastAPI app
 app = FastAPI()
