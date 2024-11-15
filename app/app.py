@@ -31,6 +31,12 @@ class HouseFeatures(BaseModel):
     B: float
     LSTAT: float
 
+
+# Root endpoint that shows a welcome message
+@app.get("/")
+async def root():
+    return {"message": "This is the house price prediction service."}
+
 # Define prediction endpoint
 @app.post("/predict/")
 async def predict(features: List[HouseFeatures]):
