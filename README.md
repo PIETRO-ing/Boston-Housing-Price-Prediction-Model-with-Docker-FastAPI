@@ -10,21 +10,28 @@ Building a model that can provide a price estimate based on a home's characteris
 
 <img src=https://i.imgur.com/WfUSSP7.png height=350>
 
-To accomplish the task I will:
+## Project Overview:
 
-1. Analyse and explore the Boston house price data
-2. Split the data for training and testing
-3. Run a Multivariable Regression
-4. Evaluate the model's coefficients and residuals
-5. Use data transformation to improve the model performance
-6. Use the model to estimate a property price
-7. Dockerize the model
-8. Deploy the model in an app
+    Developed a machine learning model to predict housing prices in Boston using a comprehensive dataset of features (e.g., crime rate, average rooms per dwelling, etc.).
+    Applied log transformation to target variables to improve model performance and utilized PyCaret for automated model selection and hyperparameter tuning.
+    Model Performance: Achieved a Relative RMSE of 0.67%, meaning the model's predictions were accurate to within $335 for a $50,000 house price.
 
+## Key Highlights:
 
-sudo docker build -t jupyter . && sudo docker run -it --rm -p 8888:8888 --mount src="$(pwd)",target=/app,type=bind jupyter
+    Trained multiple regression models (e.g., Random Forest, Gradient Boosting, XGBoost) and selected the best model based on RMSE and R².
+    Leveraged feature engineering, including log transformation of the target variable and cross-validation to tune hyperparameters and improve model generalization.
+    Integrated FastAPI to serve the trained model via a RESTful API for easy consumption of predictions in web or mobile applications.
 
-* build the image with all the requirements
-* run a container 
-* access to jupyter lab
-* work on the file inside the continer and see the change in my local directory outside the container
+## Technologies & Tools:
+
+    Programming Languages: Python (scikit-learn, PyCaret, FastAPI)
+    Machine Learning: scikit-learn, PyCaret, XGBoost, RandomForest, Gradient Boosting
+    Data Science Libraries: pandas, numpy, matplotlib, seaborn
+    Model Deployment: Docker, Docker Compose, FastAPI
+    Version Control: GitHub (for project management and collaboration)
+
+## Deployment & Containerization:
+
+    Dockerized the entire machine learning pipeline, including data preprocessing, model training, and the FastAPI server, to ensure reproducibility and ease of deployment.
+    Used Docker Compose to manage multi-container applications, integrating the model container, FastAPI server, and any necessary services (e.g., databases or caching).
+    The FastAPI framework was used to expose model predictions as API endpoints, making it easy to integrate into production systems for real-time predictions.
