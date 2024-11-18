@@ -1,4 +1,4 @@
-# Boston_LR
+# Boston Housing Price Prediction Model with Docker & FastAPI
 
 <img src=https://i.imgur.com/WKQ0nH2.jpg height=350>
 
@@ -10,28 +10,32 @@ Building a model that can provide a price estimate based on a home's characteris
 
 <img src=https://i.imgur.com/WfUSSP7.png height=350>
 
+
+
 ## Project Overview:
 
-    Developed a machine learning model to predict housing prices in Boston using a comprehensive dataset of features (e.g., crime rate, average rooms per dwelling, etc.).
-    Applied log transformation to target variables to improve model performance and utilized PyCaret for automated model selection and hyperparameter tuning.
-    Model Performance: Achieved a Relative RMSE of 0.67%, meaning the model's predictions were accurate to within $335 for a $50,000 house price.
+    Developed a machine learning model to predict Boston housing prices, using a dataset containing features like crime rate, average number of rooms, and proximity to employment centers.
+    Log transformation was applied to the target variable (price) to normalize skewed data and improve model performance.
+    Trained a Gradient Boosting Regressor (GBR) model using PyCaret and fine-tuned it with cross-validation and hyperparameter optimization.
+    Achieved a significant performance improvement in model accuracy:
+        Relative RMSE improved from 1.548% (without log transformation) to 0.67% (with log transformation), demonstrating the effectiveness of the transformation in reducing prediction error.
 
 ## Key Highlights:
 
-    Trained multiple regression models (e.g., Random Forest, Gradient Boosting, XGBoost) and selected the best model based on RMSE and R².
-    Leveraged feature engineering, including log transformation of the target variable and cross-validation to tune hyperparameters and improve model generalization.
-    Integrated FastAPI to serve the trained model via a RESTful API for easy consumption of predictions in web or mobile applications.
+    Trained and compared multiple regression models (e.g., Random Forest, Gradient Boosting, XGBoost) and selected the best-performing model using RMSE and R².
+    Leveraged PyCaret for automated machine learning tasks, including feature selection, model comparison, and hyperparameter tuning.
+    Used FastAPI to expose the trained model as an API, enabling real-time predictions for new housing data.
 
 ## Technologies & Tools:
 
     Programming Languages: Python (scikit-learn, PyCaret, FastAPI)
-    Machine Learning: scikit-learn, PyCaret, XGBoost, RandomForest, Gradient Boosting
+    Machine Learning: scikit-learn, XGBoost, RandomForest, Gradient Boosting
     Data Science Libraries: pandas, numpy, matplotlib, seaborn
     Model Deployment: Docker, Docker Compose, FastAPI
     Version Control: GitHub (for project management and collaboration)
 
 ## Deployment & Containerization:
 
-    Dockerized the entire machine learning pipeline, including data preprocessing, model training, and the FastAPI server, to ensure reproducibility and ease of deployment.
-    Used Docker Compose to manage multi-container applications, integrating the model container, FastAPI server, and any necessary services (e.g., databases or caching).
-    The FastAPI framework was used to expose model predictions as API endpoints, making it easy to integrate into production systems for real-time predictions.
+    Dockerized the entire pipeline, including data preprocessing, model training, and the FastAPI server for serving predictions.
+    Used Docker Compose to manage multi-container applications, integrating the model container, FastAPI server, and any necessary services (e.g., databases).
+    Exposed the trained model through a FastAPI server, allowing seamless integration with front-end applications or other services for real-time predictions.
